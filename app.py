@@ -17,9 +17,9 @@ from flaskscrapper import Fun
 @app.route('/', methods=['POST', 'GET'])
 def index():
     if request.method=="POST":
-        task_content = request.form['content']
+        url = request.form['url']
         topicid = request.form['topicid']
-        return Fun(task_content, topicid)
+        return Fun(url, topicid)
         #return myFunction(task_content, topicid)
     else:
         return render_template('index.html')
